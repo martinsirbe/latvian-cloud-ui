@@ -17,6 +17,8 @@ const Joke: React.FC = () => {
         return <div>Loading...</div>;
     }
 
+    const isSmallScreen = window.innerWidth < 600;
+
     return <div style={{
         display: 'flex',
         flexDirection: 'column',
@@ -25,7 +27,7 @@ const Joke: React.FC = () => {
         alignItems: 'center',
         gap: '10px'
     }}>
-        <img src={logo} alt="Potatoe Cloud" style={{width: '35%', height: 'auto', marginTop: '-65px'}} />
+        <img src={logo} alt="Potatoe Cloud" style={{width: isSmallScreen ? '70%' : '35%', height: 'auto', marginTop: '-65px'}} />
         <div style={{fontFamily: "'Oswald', sans-serif", fontSize: '24px', color: '#554924'}}>{joke}</div>
     </div>;
 };
