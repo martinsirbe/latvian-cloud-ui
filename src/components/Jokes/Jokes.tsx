@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useJokes } from './useJokes';
 import logo from '../../assets/potatoe_cloud.png'
+import ConfettiExplosion from "react-confetti-explosion";
 
 const Joke: React.FC = () => {
     const [joke, setJoke] = useState<string | null>(null);
@@ -25,7 +26,6 @@ const Joke: React.FC = () => {
         marginTop: isSmallScreen ? '-150px' : '-65px'
     }
 
-
     return <div style={{
         display: 'flex',
         flexDirection: 'column',
@@ -34,7 +34,8 @@ const Joke: React.FC = () => {
         alignItems: 'center',
         gap: '10px'
     }}>
-        <img src={logo} alt="Potatoe Cloud" style={imageStyle} />
+        <ConfettiExplosion />
+        <img src={logo} alt="Potatoe Cloud" style={imageStyle}/>
         <div style={{fontFamily: "'Oswald', sans-serif", fontSize: '24px', color: '#554924'}}>{joke}</div>
     </div>;
 };

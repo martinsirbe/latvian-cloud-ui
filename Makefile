@@ -5,3 +5,7 @@ build:
 .PHONY: deploy
 deploy:
 	npm run deploy
+
+.PHONY: dev
+dev:
+	npm run dev
